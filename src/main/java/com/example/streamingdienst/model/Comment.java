@@ -15,7 +15,7 @@ public class Comment {
     private String text;
     private int likes;
 
-    @ManyToOne(fetch = FetchType.EAGER, targetEntity = Film.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Film.class)
     @JoinColumn(name = "film_id")
     private Film film;
 

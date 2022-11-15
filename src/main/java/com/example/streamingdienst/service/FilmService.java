@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public interface FilmService {
-    Film SaveFilm(Film film);
+    void SaveFilm(Film film);
     List<Film> GetAllFilms();
     List<Film> GetFilmsByGenre(Optional<Genre> genre);
     Optional<Film> FetchFilm(String id);

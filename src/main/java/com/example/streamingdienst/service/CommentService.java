@@ -1,7 +1,7 @@
 package com.example.streamingdienst.service;
 
 import com.example.streamingdienst.model.Comment;
-import com.example.streamingdienst.model.Film;
+import com.example.streamingdienst.model.CommentDTO;
 
 import java.util.List;
 import java.util.Optional;
