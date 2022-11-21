@@ -20,6 +20,12 @@ public class FilmController {
     @Autowired
     private GenreService genreService;
 
+    @GetMapping("/")
+    public List<Film> getAllFilms(){
+
+        return filmService.GetAllFilms();
+    }
+
     @GetMapping("/{id}")
     public Optional<Film> GetFilm(@PathVariable String id){
         return filmService.FetchFilm(id);

@@ -1,11 +1,15 @@
 package com.example.streamingdienst.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(value = "films")
 public class Genre {
     @Id
@@ -16,9 +20,6 @@ public class Genre {
 
     @ManyToMany(mappedBy = "genres")
     private Set<Film> films;
-
-    public Genre() {
-    }
 
     public int getId() {
         return id;

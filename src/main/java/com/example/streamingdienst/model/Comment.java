@@ -1,12 +1,16 @@
 package com.example.streamingdienst.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 
 import javax.persistence.*;
 import java.util.Optional;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties(value = "film")
 public class Comment {
     @Id
@@ -19,8 +23,9 @@ public class Comment {
     @JoinColumn(name = "film_id")
     private Film film;
 
-    public Comment() {
-    }
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
+    @JoinColumn(name = "user_id")
+    private User user;
 
     public Comment(Optional<Comment> comment) {
         this.id = comment.get().id;

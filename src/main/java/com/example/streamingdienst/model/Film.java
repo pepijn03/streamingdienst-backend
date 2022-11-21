@@ -1,5 +1,7 @@
 package com.example.streamingdienst.model;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -9,6 +11,8 @@ import java.util.Set;
 
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,8 +35,6 @@ public class Film {
             inverseJoinColumns = @JoinColumn(name = "genre_id"))
     private Set<Genre> genres;
 
-    public Film() {
-    }
 
     public Film(Optional<Film> film) {
         this.id = film.get().getId();
