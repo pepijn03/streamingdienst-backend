@@ -12,5 +12,6 @@ public interface FilmService {
     List<Film> GetFilmsByGenre(Optional<Genre> genre);
     Optional<Film> FetchFilm(String id);
     List<Film> FindFilms(String query);
+    void DeleteFilm(int filmid);
 }
 

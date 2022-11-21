@@ -36,4 +36,7 @@ public class FilmServiceImpl implements FilmService {
     @Override
     public  List<Film> FindFilms(String query){return filmRepo.FindFilms("%" + query + "%");}
 
+    @Override
+    public void DeleteFilm(int filmid){filmRepo.deleteById(filmid);}
+
 }

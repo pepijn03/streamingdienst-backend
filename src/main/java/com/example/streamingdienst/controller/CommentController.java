@@ -22,6 +22,9 @@ public class CommentController {
     private CommentService commentService;
 
 
+    //GET
+
+    //POST
     @PostMapping("/add")
     public String add(@RequestBody Comment comment){
         //comment.setFilm(new Film(filmService.FetchFilm(String.valueOf(comment.getFilm().getId())))) ;
@@ -29,6 +32,7 @@ public class CommentController {
         return "comment is added";
     }
 
+    //PUT
     @PutMapping("/like")
     public String like(@RequestBody Comment comment){
         /*CommentDto c = new CommentDto(commentService.findComment(comment.getId()));
@@ -36,5 +40,7 @@ public class CommentController {
         commentService.UpdateLike(comment.getId(), comment.getLikes());
         return "comment likes have been updated";
     }
+
+    //DELETE
 
 }

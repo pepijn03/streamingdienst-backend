@@ -20,6 +20,7 @@ public class FilmController {
     @Autowired
     private GenreService genreService;
 
+    //GET
     @GetMapping("/")
     public List<Film> getAllFilms(){
 
@@ -34,12 +35,6 @@ public class FilmController {
     @GetMapping("/find/{query}")
     public List<Film> FindFilm(@PathVariable String query) {return filmService.FindFilms(query);}
 
-    @PostMapping("/add")
-    public String add(@RequestBody Film film){
-        filmService.SaveFilm(film);
-        return "new film is added";
-    }
-
     @GetMapping("/genres/{id}")
     public List<Film> FindFilmsByGenre(@PathVariable String id) {
         return filmService.GetFilmsByGenre(genreService.FetchGenre(id));
@@ -49,4 +44,20 @@ public class FilmController {
     public  List<Genre> GetAllFilms(){
         return genreService.GetAllGenres();
     }
+
+    //POST
+    @PostMapping("/add")
+    public String add(@RequestBody Film film){
+        filmService.SaveFilm(film);
+        return "new film is added";
+    }
+
+   //PUT
+
+   //DELETE
+   @PostMapping("/{id}/delete")
+   public String delete(@PathVariable int id){
+       filmService.DeleteFilm(id);
+       return "new film is added";
+   }
 }
