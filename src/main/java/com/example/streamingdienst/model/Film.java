@@ -1,5 +1,7 @@
 package com.example.streamingdienst.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Optional;
@@ -14,6 +16,7 @@ public class Film {
     private String name;
     private String description;
     private int length;
+    @DateTimeFormat(pattern="dd-MM-yyyy")
     private Date releaseDate;
     private int ageRestriction;
 

@@ -1,7 +1,7 @@
 package com.example.streamingdienst.controller;
 
 import com.example.streamingdienst.model.Comment;
-
+import com.example.streamingdienst.model.CommentDTO;
 import com.example.streamingdienst.service.CommentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
