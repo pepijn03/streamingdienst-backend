@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -26,7 +27,7 @@ public class CommentController {
 
     //POST
     @PostMapping("/add")
-    public String add(@RequestBody Comment comment){
+    public String add(@RequestBody  Comment comment){
         //comment.setFilm(new Film(filmService.FetchFilm(String.valueOf(comment.getFilm().getId())))) ;
         commentService.SaveComment(comment);
         return "comment is added";

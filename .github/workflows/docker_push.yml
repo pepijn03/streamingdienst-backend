@@ -1,17 +1,21 @@
 name: Docker
 
-cache:
-  paths:
-    - .m2/repository/
-    - target/
-
 on:
-  push
-
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    cache:
+      paths:
+        - .m2/repository/
+        - target/
+
+
     steps:
       -
         name: Checkout
