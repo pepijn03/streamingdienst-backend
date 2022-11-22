@@ -2,12 +2,6 @@
 # For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
 
 name: Java CI with Maven
-env:
-  MYSQL_DATABASE: test_forest
-  MYSQL_USER: test_user
-  MYSQL_PASSWORD: password
-  MYSQL_HOST: mysql-master
-  NODE_ENV: test
 
 on:
   push:
