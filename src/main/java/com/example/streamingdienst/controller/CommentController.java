@@ -27,8 +27,9 @@ public class CommentController {
 
     //POST
     @PostMapping("/add")
-    public String add(@RequestBody  Comment comment){
+    public String add(@RequestBody Comment comment){
         //comment.setFilm(new Film(filmService.FetchFilm(String.valueOf(comment.getFilm().getId())))) ;
+        comment.setLikes(0);
         commentService.SaveComment(comment);
         return "comment is added";
     }
