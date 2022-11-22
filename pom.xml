@@ -14,7 +14,7 @@
     <name>Streamingdienst-backend-2</name>
     <description>Streamingdienst-backend-2</description>
     <properties>
-        <java.version>17</java.version>
+        <java.version>18</java.version>
     </properties>
     <dependencies>
         <dependency>
