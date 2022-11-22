@@ -1,5 +1,6 @@
 package com.example.streamingdienst.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -26,6 +27,7 @@ public class Film {
 
 
     @OneToMany(mappedBy="id")
+    @JsonManagedReference
     public Set<Comment> comments;
 
     @ManyToMany

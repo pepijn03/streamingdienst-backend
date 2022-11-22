@@ -1,6 +1,8 @@
 package com.example.streamingdienst.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
@@ -11,7 +13,6 @@ import java.util.Optional;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties(value = "film")
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,10 +21,12 @@ public class Comment {
     private int likes;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Film.class)
+    @JsonBackReference
     @JoinColumn(name = "film_id")
     public Film film;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
+    @JsonManagedReference
     @JoinColumn(name = "user_id")
     private User user;
 

@@ -1,6 +1,8 @@
 package com.example.streamingdienst.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -19,6 +21,7 @@ public class User {
     private Boolean admin;
 
     @OneToMany(mappedBy="user")
+    @JsonBackReference
     private Set<Comment> comments;
 
     public int getId() {
