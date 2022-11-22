@@ -21,7 +21,7 @@ public class Comment {
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = Film.class)
     @JoinColumn(name = "film_id")
-    private Film film;
+    public Film film;
 
     @ManyToOne(fetch = FetchType.LAZY, targetEntity = User.class)
     @JoinColumn(name = "user_id")

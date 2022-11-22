@@ -25,8 +25,8 @@ public class Film {
     private int ageRestriction;
 
 
-    @OneToMany(mappedBy="film")
-    private Set<Comment> comments;
+    @OneToMany(mappedBy="id")
+    public Set<Comment> comments;
 
     @ManyToMany
     @JoinTable(
