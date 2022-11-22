@@ -21,7 +21,7 @@ public class User {
     private Boolean admin;
 
     @OneToMany(mappedBy="user")
-    @JsonBackReference
+    @JsonManagedReference(value="user-comments")
     private Set<Comment> comments;
 
     public int getId() {

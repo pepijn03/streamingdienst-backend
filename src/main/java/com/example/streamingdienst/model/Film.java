@@ -27,7 +27,7 @@ public class Film {
 
 
     @OneToMany(mappedBy="id")
-    @JsonManagedReference
+    @JsonManagedReference(value="film-comments")
     public Set<Comment> comments;
 
     @ManyToMany
