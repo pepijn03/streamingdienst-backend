@@ -1,5 +1,6 @@
 package com.example.streamingdienst.controller;
 
+import com.example.streamingdienst.model.Comment;
 import com.example.streamingdienst.model.Film;
 import com.example.streamingdienst.model.Genre;
 import com.example.streamingdienst.service.FilmService;
@@ -52,12 +53,17 @@ public class FilmController {
         return "new film is added";
     }
 
-   //PUT
+    //PUT
+    @PutMapping("/update")
+    public String update(@RequestBody Film film){
+        filmService.SaveFilm(film);
+        return "film has been updated";
+    }
 
-   //DELETE
-   @PostMapping("/{id}/delete")
-   public String delete(@PathVariable int id){
-       filmService.DeleteFilm(id);
-       return "new film is added";
-   }
+    //DELETE
+    @DeleteMapping("/{id}/delete")
+    public String delete(@PathVariable int id){
+        filmService.DeleteFilm(id);
+        return "film deleted";
+    }
 }

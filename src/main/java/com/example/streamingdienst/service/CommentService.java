@@ -13,4 +13,6 @@ public interface CommentService {
     Comment UpdateComment(Comment comment);
     void UpdateLike(int comment_id, int like_value);
 
+    void DeleteComment(int id);
+
 }
