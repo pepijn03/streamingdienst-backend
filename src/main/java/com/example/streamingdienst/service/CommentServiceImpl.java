@@ -26,4 +26,7 @@ public class CommentServiceImpl implements CommentService{
     @Override
     public void UpdateLike(int comment_id, int like_value){commentRepo.UpdateLike(comment_id, like_value);  }
 
+    @Override
+    public void DeleteComment(int id){commentRepo.deleteById(id);}
+
 }
