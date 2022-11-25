@@ -39,4 +39,7 @@ public class FilmServiceImpl implements FilmService {
     @Override
     public void DeleteFilm(int filmid){filmRepo.deleteById(filmid);}
 
+    @Override
+    public void DeleteGenreRefs(int id) {filmRepo.DeleteGenreRefs(String.valueOf(id));}
+
 }

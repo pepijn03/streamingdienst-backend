@@ -20,6 +20,10 @@ public interface FilmRepo extends JpaRepository<Film,Integer> {
             nativeQuery = true)
     List<Film> FindFilmByGenre(@Param("id") String id);
 
+    @Query(value = "DELETE FROM `film_genres` WHERE `film_id` = :id " ,
+    nativeQuery = true)
+    void DeleteGenreRefs(@Param("id") String id);
+
 
 
 }
