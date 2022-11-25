@@ -10,11 +10,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
-    cache:
-      paths:
-        - .m2/repository/
-        - target/
-
 
     steps:
       -
