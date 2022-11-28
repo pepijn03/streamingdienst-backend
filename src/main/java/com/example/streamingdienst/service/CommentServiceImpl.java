@@ -3,9 +3,13 @@ package com.example.streamingdienst.service;
 import com.example.streamingdienst.model.Comment;
 import com.example.streamingdienst.repository.CommentRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.AsyncResult;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
+import java.util.Set;
+import java.util.concurrent.Future;
 
 @Service
 public class CommentServiceImpl implements CommentService{
@@ -28,5 +32,21 @@ public class CommentServiceImpl implements CommentService{
 
     @Override
     public void DeleteComment(int id){commentRepo.deleteById(id);}
+
+    @Override
+    @Async
+    public Future<Set<Comment>>  GetCommentByFilm(int id) {
+        System.out.println("Execute method asynchronously - "
+                + Thread.currentThread().getName());
+        try {
+            Thread.sleep(5000);
+            Set<Comment> comments = commentRepo.GetByFilm(id);
+            return new AsyncResult<>(comments);
+        } catch (InterruptedException e) {
+            //
+        }
+
+        return null;
+    }
 
 }

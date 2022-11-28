@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import javax.transaction.Transactional;
 
 import java.util.List;
+import java.util.Set;
 
 @Repository
 @Transactional
@@ -18,6 +19,10 @@ public interface CommentRepo extends JpaRepository<Comment,Integer> {
     @Query(value = "UPDATE `comment` SET `likes`=:like WHERE id = :id ",
             nativeQuery = true)
     void UpdateLike(@Param("id") int comment_id, @Param("like") int like_value);
+
+    @Query(value = "SELECT * FROM `comment` WHERE film_id = :id",
+    nativeQuery = true)
+    Set<Comment> GetByFilm(@Param("id") int id);
 
 
 }

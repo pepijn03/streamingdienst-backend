@@ -26,7 +26,7 @@ public class Film {
     private int ageRestriction;
 
 
-    @OneToMany(mappedBy="id", orphanRemoval = true)
+    @OneToMany(mappedBy="id")
     @JsonManagedReference(value="film-comments")
     public Set<Comment> comments;
 
