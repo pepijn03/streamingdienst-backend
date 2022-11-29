@@ -1,4 +1,4 @@
-FROM maven:3.8.4-openjdk-18 as maven-builder
+FROM maven:3.8-openjdk-18 as maven-builder
 
 COPY src /app/src
 
