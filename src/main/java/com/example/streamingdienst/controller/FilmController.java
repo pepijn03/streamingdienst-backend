@@ -64,6 +64,7 @@ public class FilmController {
     @DeleteMapping("/{id}/delete")
     public String delete(@PathVariable int id){
         filmService.DeleteGenreRefs(id);
+        filmService.DeleteCommentsOnFilm(id);
         filmService.DeleteFilm(id);
         return "film deleted";
     }

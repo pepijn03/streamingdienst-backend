@@ -15,6 +15,7 @@ public interface FilmService {
     List<Film> FindFilms(String query);
     void DeleteFilm(int filmid);
     void DeleteGenreRefs(int id);
+    void DeleteCommentsOnFilm(int id);
 
 }
 

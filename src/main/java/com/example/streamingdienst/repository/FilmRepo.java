@@ -29,6 +29,11 @@ public interface FilmRepo extends JpaRepository<Film,Integer> {
     nativeQuery = true)
     void DeleteGenreRefs(@Param("id") String id);
 
+    @Modifying
+    @Query(value = "DELETE FROM `comment` WHERE `film_id` = :id ",
+    nativeQuery = true)
+    void DeleteCommentsOnFilm(@Param("id") String id);
+
 
 
 
