@@ -36,4 +36,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: pepijn03/streamingdienst_ci:latest
+          tags: pepijn03/streamingdienst-be:latest
