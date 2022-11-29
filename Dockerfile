@@ -10,7 +10,7 @@ FROM openjdk:18-alpine
 
 
 
-COPY --from=maven-builder app/target/WeatherWidget-0.0.1-SNAPSHOT.jar /app-service/Streamingdienst-backend-2-0.0.1-SNAPSHOT.jar
+COPY --from=maven-builder app/target/Streamingdienst-backend-2-0.0.1-SNAPSHOT.jar /app-service/Streamingdienst-backend-2-0.0.1-SNAPSHOT.jar
 
 WORKDIR /app-service
 
