@@ -2,12 +2,12 @@ version: '3'
 
 services:
 
-#  streamingdienst-be:
-#    image: pepijn03/streamingdienst-be:latest
-#    ports:
-#      - "8080:8080"
-#    environment:
-#      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3306/streamingdienst
+  streamingdienst-be:
+    image: pepijn03/streamingdienst-be:latest
+    ports:
+      - "8080:8080"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/streamingdienst
 
   streamingdienst-fe:
     image: pepijn03/streamingdienst-fe:latest
@@ -19,12 +19,10 @@ services:
     ports:
       - "3001:3000"
 
-
-
-#  mysql-development:
-#    image: mysql:8.0.17
-#    environment:
-#      MYSQL_ALLOW_EMPTY_PASSWORD: true
-#      MYSQL_DATABASE: streamingdienst
-#    ports:
-#      - "3306:3306"
+  mysql-db:
+    image: mysql:8.0.17
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_DATABASE: streamingdienst
+    ports:
+      - "3306:3306"
