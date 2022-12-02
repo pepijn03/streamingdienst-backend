@@ -20,7 +20,7 @@ public class Comment {
     private String text;
     private int likes;
 
-    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Film.class)
+    @ManyToOne(fetch = FetchType.LAZY, targetEntity = Film.class, cascade=CascadeType.ALL)
     @JsonBackReference(value="film-comments")
     @JoinColumn(name = "film_id")
     public Film film;
