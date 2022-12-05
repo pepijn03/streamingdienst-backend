@@ -1,4 +1,4 @@
-package com.example.streamingdienst;
+/*package com.example.streamingdienst;
 
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,4 +19,4 @@ public class FilmTests {
     @Autowired
     private MockMvc mvc;
 
-}
+}*/
