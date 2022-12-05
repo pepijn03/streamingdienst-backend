@@ -38,12 +38,11 @@ public class CommentController {
                 comments = future.get();
                 break;
             }
-
-
         }
-
         return comments;
     }
+
+
 
 
     //POST
