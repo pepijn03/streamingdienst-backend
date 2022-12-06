@@ -13,6 +13,7 @@ import java.util.Set;
 @Getter
 @Setter
 @JsonIgnoreProperties(value = "comments")
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
