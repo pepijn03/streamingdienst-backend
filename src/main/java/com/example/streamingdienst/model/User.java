@@ -3,11 +3,15 @@ package com.example.streamingdienst.model;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Getter
+@Setter
 @JsonIgnoreProperties(value = "comments")
 public class User {
     @Id
@@ -23,26 +27,4 @@ public class User {
     @OneToMany(mappedBy="user")
     @JsonManagedReference(value="user-comments")
     private Set<Comment> comments;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {this.id = id;}
-
-    public String getUserName() {return userName;}
-
-    public void setUserName(String userName) {this.userName = userName;}
-
-    public String getPassword() {return password;}
-
-    public void setPassword(String password) {this.password = password;}
-
-    public Boolean getAdmin() {return admin;}
-
-    public void setAdmin(Boolean admin) {this.admin = admin;}
-
-    public Set<Comment> getComments() {return comments;}
-
-    public void setComments(Set<Comment> comments) {this.comments = comments;}
 }

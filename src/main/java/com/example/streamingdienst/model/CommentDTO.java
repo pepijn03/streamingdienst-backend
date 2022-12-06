@@ -1,8 +1,6 @@
 package com.example.streamingdienst.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.io.Serializable;
 import java.util.Optional;
@@ -13,6 +11,8 @@ import javax.persistence.*;
  */
 @Data
 @AllArgsConstructor
+@Getter
+@Setter
 public class CommentDTO implements Serializable {
     @Column(name = "id")
     private final int id;

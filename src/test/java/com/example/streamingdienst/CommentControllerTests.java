@@ -1,4 +1,3 @@
-/*
 package com.example.streamingdienst;
 
 import com.example.streamingdienst.repository.CommentRepo;
@@ -41,7 +40,4 @@ public class CommentControllerTests {
     }
 
 
-
-
 }
-*/

@@ -2,7 +2,9 @@ package com.example.streamingdienst.model;
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.AllArgsConstructor;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
@@ -14,6 +16,8 @@ import java.util.Set;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,44 +53,4 @@ public class Film {
         this.genres = film.get().getGenres();
 
     }
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getLength() {
-        return length;
-    }
-    public void setLength(int length) {
-        this.length = length;
-    }
-
-    public String getDescription() {return description;}
-    public void setDescription(String description) {this.description = description;}
-
-    public Date getReleaseDate() {return releaseDate;}
-    public void setReleaseDate(Date releaseDate) {this.releaseDate = releaseDate;}
-
-    public int getAgeRestriction() {return ageRestriction;}
-    public void setAgeRestriction(int ageRestriction) {this.ageRestriction = ageRestriction;}
-
-    public Set<Genre> getGenres() {
-        return genres;
-    }
-    public void setGenres(Set<Genre> genres) {
-        this.genres = genres;
-    }
-
-    public Set<Comment> getComments() {return comments;}
-    public void setComments(Set<Comment> comments) {this.comments = comments;}
 }
