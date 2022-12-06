@@ -6,7 +6,7 @@ COPY pom.xml /app
 
 RUN mvn -f /app/pom.xml clean package -DskipTests
 
-FROM openjdk:18-alpine
+FROM openjdk:18.0.2.1-slim
 
 
 
