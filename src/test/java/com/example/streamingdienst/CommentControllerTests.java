@@ -35,8 +35,8 @@ public class CommentControllerTests {
     private CommentRepo commentRepo;
 
     @Test
-    public void givenEmployees_whenGetEmployees_thenStatus200()
-            throws Exception {
+    public void givenEmployees_whenGetEmployees_thenStatus200(){
+
     }
 
 
