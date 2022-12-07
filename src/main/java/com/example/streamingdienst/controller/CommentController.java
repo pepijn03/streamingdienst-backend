@@ -24,7 +24,7 @@ public class CommentController {
     private CommentService commentService;
 
     //GET
-    @ResponseStatus(code = HttpStatus.OK, reason = "OK")
+    //@ResponseStatus(code = HttpStatus.OK, reason = "OK")
     @GetMapping("/{id}")
     public Set<Comment> GetCommentByfilm(@PathVariable int id) throws ExecutionException, InterruptedException {
         Set<Comment> comments = null;
