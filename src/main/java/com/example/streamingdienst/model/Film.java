@@ -30,7 +30,7 @@ public class Film {
     private int ageRestriction;
 
 
-    @OneToMany(mappedBy="id")
+    @OneToMany(mappedBy="film")
     @JsonManagedReference(value="film-comments")
     public Set<Comment> comments;
 

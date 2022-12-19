@@ -11,6 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import com.example.streamingdienst.repository.FilmRepo;
 import com.example.streamingdienst.service.FilmService;
+import org.springframework.test.context.BootstrapWith;
 import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -32,34 +33,23 @@ class FilmServiceImplTest {
     @Autowired
     private FilmService filmService;
 
-    @MockBean
+    @Autowired
     private FilmRepo filmRepo;
 
     @Test
     void createFilm()   {
         //ARRANGE
-        Film film = new Film();
-        film.setId(1);
-        film.setName("test");
-        film.setDescription("test");
-        film.setLength(100);
-        film.setAgeRestriction(12);
-        film.setReleaseDate(new Date());
-
+        Film film = new Film(1, "test", "test", 100, new Date(), 12, null, null);
 
         //ACT
         filmService.SaveFilm(film);
-        List<Film> films = filmService.GetAllFilms();
-        Film filmgot = new Film();
-        if (films.size() > 0){
-            filmgot = films.get(films.size());
-        }
+        Film filmgot = new Film(filmService.FetchFilm("1"));
 
 
 
         //ASSERT
-        //assertNotNull(filmgot);
-        //assertEquals(filmgot.getName(), film.getName());
+        assertNotNull(filmgot);
+        assertEquals(filmgot.getName(), film.getName());
     }
 
     @Test
