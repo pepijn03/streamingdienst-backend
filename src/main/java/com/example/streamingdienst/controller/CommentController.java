@@ -38,8 +38,6 @@ public class CommentController {
                 comments = future.get();
                 break;
             }
-
-
         }
 
         return comments;
@@ -48,11 +46,12 @@ public class CommentController {
 
     //POST
     @PostMapping("/add")
-    public String add(@RequestBody Comment comment){
+    public Set<Comment> add(@RequestBody Comment comment) throws ExecutionException, InterruptedException {
         //comment.setFilm(new Film(filmService.FetchFilm(String.valueOf(comment.getFilm().getId())))) ;
         comment.setLikes(0);
         commentService.SaveComment(comment);
-        return "comment is added";
+
+        return commentService.GetCommentByFilm(comment.film.getId()).get();
     }
 
     //PUT
