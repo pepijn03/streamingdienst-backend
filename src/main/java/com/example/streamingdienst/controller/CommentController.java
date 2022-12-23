@@ -4,7 +4,9 @@ import com.example.streamingdienst.model.Comment;
 import com.example.streamingdienst.service.CommentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.http.HttpStatus;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,13 +47,18 @@ public class CommentController {
 
 
     //POST
+    @Async
     @PostMapping("/add")
-    public Set<Comment> add(@RequestBody Comment comment) throws ExecutionException, InterruptedException {
+    public Future<Set<Comment>> add(@RequestBody Comment comment) throws ExecutionException, InterruptedException {
         //comment.setFilm(new Film(filmService.FetchFilm(String.valueOf(comment.getFilm().getId())))) ;
         comment.setLikes(0);
         commentService.SaveComment(comment);
 
-        return commentService.GetCommentByFilm(comment.film.getId()).get();
+        System.out.println("Invoking an asynchronous method. "
+                + Thread.currentThread().getName());
+
+
+        return commentService.GetCommentByFilm(comment.film.getId());
     }
 
     //PUT
