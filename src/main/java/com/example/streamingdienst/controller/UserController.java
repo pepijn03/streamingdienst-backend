@@ -22,7 +22,7 @@ public class UserController {
     @PostMapping("/add")
     public String add( @RequestBody User user){
         userService.SaveUser(user);
-        return "user: " + user.getUserName() + " added";
+        return "new user added";
     }
 
     //PUT
