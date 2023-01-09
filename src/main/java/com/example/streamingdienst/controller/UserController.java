@@ -21,7 +21,7 @@ public class UserController {
     //POST
     @PostMapping("/add")
     public String add( @RequestBody User user){
-        userService.SaveFilm(user);
+        userService.SaveUser(user);
         return "user: " + user.getUserName() + " added";
     }
 

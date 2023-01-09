@@ -12,6 +12,6 @@ public class UserServiceImpl implements UserService {
     private UserRepo userRepo;
 
     @Override
-    public void SaveFilm(User user){userRepo.save(user);}
+    public void SaveUser(User user){userRepo.save(user);}
 
 }

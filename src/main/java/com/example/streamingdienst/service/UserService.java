@@ -4,5 +4,5 @@ import com.example.streamingdienst.model.Film;
 import com.example.streamingdienst.model.User;
 
 public interface UserService {
-    void SaveFilm(User user);
+    void SaveUser(User user);
 }
