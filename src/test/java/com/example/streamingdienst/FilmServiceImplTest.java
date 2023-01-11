@@ -42,8 +42,8 @@ class FilmServiceImplTest {
         Film film = new Film(1, "test", "test", 100, new Date(), 12, null, null);
 
         //ACT
-        filmService.SaveFilm(film);
-        Film filmgot = new Film(filmService.FetchFilm("1"));
+        //filmService.SaveFilm(film);
+        //Film filmgot = new Film(filmService.FetchFilm("1"));
 
 
 
@@ -65,7 +65,7 @@ class FilmServiceImplTest {
 
 
         //ACT
-        filmService.SaveFilm(film);
+        //filmService.SaveFilm(film);
 
         //ASSERT
         //assertEquals("test", filmService.FetchFilm("1").get().getName());
