@@ -1,10 +1,7 @@
 package com.example.streamingdienst.service;
 
 import com.example.streamingdienst.model.Comment;
-import com.example.streamingdienst.model.CommentDTO;
 
-import javax.persistence.SecondaryTable;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 import java.util.concurrent.Future;
